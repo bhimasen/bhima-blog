@@ -1,0 +1,2 @@
+class InterViewQuestion < ApplicationRecord
+end

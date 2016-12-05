@@ -1,0 +1,21 @@
+<p> Blog details </p>
+<%= link_to "Create Blog", new_blog_path()%>
+<table class=" table table-striped" data-sort-name="name" data-sort-order="desc">
+  <thead>
+    <tr>
+      <th data-field="name" data-sortable="true">title</th>
+      <th data-field="age" data-sortable="true">subtitle</th>
+      <th data-field="age" data-sortable="true">Details</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.sub_title %></td>
+        <td><%= link_to "show Details", blog_path(blog) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
