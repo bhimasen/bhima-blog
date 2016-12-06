@@ -1,21 +1,19 @@
-<p> Blog details </p>
-<%= link_to "Create Blog", new_blog_path()%>
-<table class=" table table-striped" data-sort-name="name" data-sort-order="desc">
-  <thead>
-    <tr>
-      <th data-field="name" data-sortable="true">title</th>
-      <th data-field="age" data-sortable="true">subtitle</th>
-      <th data-field="age" data-sortable="true">Details</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.sub_title %></td>
-        <td><%= link_to "show Details", blog_path(blog) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+      <%= link_to "Create Blog", new_blog_path(), :class=> "btn btn-primary"%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <ul class="list-group">
+        <% @blogs.each do |blog|%>
+          <li class="list-group-item"><%= link_to blog.title, blog_path(blog)%></li>
+        <% end %>
+      </ul>  
+    </div>
+    <div class="col-sm-6">
+    </div>
+  </div>
+</div>

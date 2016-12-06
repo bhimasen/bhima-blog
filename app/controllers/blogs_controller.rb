@@ -21,6 +21,8 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @blog = Blog.find(params[:id])
+    #raise params.inspect
   end
 
   def edit
