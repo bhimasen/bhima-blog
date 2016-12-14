@@ -26,11 +26,23 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    @blog = Blog.find(params[:id])
   end 
 
   def update
+    #raise params.inspect
+    @blog = Blog.find(params[:id]);
+    @blog.update_attributes(blog_params);
+    redirect_to blog_path(@blog)
   end 
 
   def destroy
   end
+
+  private
+  
+  def blog_params
+    params.require(:blog).permit(:title, :sub_title, :description)
+  end 
+
 end
